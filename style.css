@@ -1,0 +1,1008 @@
+*,
+::after,
+::before{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+:root{
+    /* colors */
+    --black-color: rgba(42, 50, 60, 1);
+    --grey-color: #4B5A6F;
+    --blue-color: rgba(18, 82, 174, 1);
+    --light-blue-color: rgba(60, 127, 223, 1);
+    --light-grey: rgba(235, 238, 242, 1);
+    
+
+    /* px, rem */
+    --2: 2px;
+    --3: 3px;
+    --4: 4px;
+    --10: 10px;
+    --20: 20px;
+    --25: 25px;
+    --30: 30px;
+    --1rem: 1rem;
+    --075rem: 0.75rem;
+    --08rem: 0.8rem;
+    --07rem: 0.7rem;
+    --09rem: 0.9rem;
+
+}
+body{
+    /* padding: 10px; */
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.container{
+    max-width: 1500px;
+    margin: auto;
+}
+/* ------------------------------------------------------------------------------ */
+
+
+
+/* header */
+
+.header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 900px;
+    margin: auto;
+}
+.marg{
+    margin-top: var(--20);
+    margin-bottom: var(--20);
+}
+/* the homeey icon */
+img[src="./assets/img/Homeey-logo.png"]{
+    width: 100px;
+}
+/* wrap the navigation links */
+.header nav {
+    display: flex;
+    align-items: center;
+}
+/* Styling the list within the nav */
+.header nav ul {
+    list-style: none;
+    display: flex;
+    gap: var(--20); /* Space between each navigation link */
+}
+/* the links in the header */
+.header nav ul li a {
+    text-decoration: none;
+    font-size: var(--1rem);
+    color:var(--grey-color);
+    transition: color 0.3s;
+}
+nav ul li a:hover {
+    color: var(--blue-color); 
+    font-weight: 600;
+}
+
+/* Mobile responsiveness */
+@media screen and (max-width: 480px){
+    .header{
+        flex-wrap: wrap;
+        align-items: center;
+        flex-direction: column;
+    }
+    nav ul {
+        flex-direction: column;
+        margin-top: var(--10);
+        align-items: center;
+    }
+    .header nav ul li a{
+        font-size: var(--075rem);
+        font-weight: 600;
+    }
+}
+/* --------------------------------------------------------- */
+
+
+
+/* hero section */
+/* all the section */
+.hero-section{ 
+    background-image: url(./assets/img/hero-bg-img.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    border-radius: var(--20);
+    padding: 25px;
+    max-width: 900px;
+    margin: auto;
+    /* margin-left: max(0px, min(20px, calc((100vw - 700px) / 25)));
+    margin-right: max(0px, min(20px, calc((100vw - 700px) / 25))); */
+}
+/* the text that on the img */
+.text-hero-section{
+    max-width: 300px;
+}
+.text-hero-section h1{
+    font-size: 2.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    text-shadow: 3px 2px 4px #45454582;
+    color: var(--black-color);
+}
+.text-hero-section h1 span{
+    color: var(--blue-color);
+}
+.text-hero-section p{
+    color: var(--black-color);
+    font-size: var(--08rem);
+    margin-top: var(--20);
+}
+/* the search part */
+.real-estate-search{
+    margin-top: 45px;
+    position: relative;
+}
+/* form */
+.search-fields{
+    background-color: #f5f5f569;
+    padding: var(--10);
+    border-radius: var(--3);
+    margin-top: var(--2);
+}
+/* the buttons- BUT/SELL/RENT */
+.option{
+    background-color: white;
+    color: var(--blue-color);
+    border: none;
+    border-top-left-radius: var(--4);
+    border-top-right-radius: var(--4);
+    padding: 3px 10px;
+    font-size: var(--075rem);
+    cursor: pointer;
+    transition: color 0.3s;
+    text-decoration: none;
+}
+.option:hover{
+    background-color: var(--blue-color);
+    color: white;
+}
+.options{
+    position: absolute;
+    top: -24px;
+    left: 11px;
+}
+/* the select elements */
+.hero-select{
+    display: flex;
+    flex-direction: column;
+    gap: var(--10);
+}
+.select-group{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    background-color: white;
+    padding: 6px 10px;
+    border-radius: var(--4);
+}
+/* the label of the select- to be hidden */
+.select-group label[for="location"],[for="property"],[for="price"]{
+    display: none;
+}
+.select-group select{
+    border: none;
+    background-color: transparent;
+    width: 100%;
+    color: var(--grey-color);
+    outline:0px;
+    cursor: pointer;
+}
+.select-group img{
+    color: var(--black-color);
+}
+
+/* the search button */
+.search-fields button{
+    border: none;
+    padding: 6px 10px;
+    border-radius: var(--4);
+    cursor: pointer;
+    background-color: var(--blue-color);
+    color: white;
+    margin-top: var(--10);
+    display: flex;
+    align-items: center;
+    transition: color 0.3s;
+}
+.search-fields button:hover{
+    background-color: rgb(65, 136, 236);
+}
+
+/* Mobile responsiveness */
+@media screen and (min-width: 514px){
+    
+    .search-fields{
+        background-color: #f5f5f569;
+        padding: 10px;
+        border-radius: var(--3);
+        margin-top: var(--2);
+        max-width: 450px;
+        display: flex;
+        gap: var(--10);
+        align-items: center;
+        justify-content: center;
+        max-width: 460px;
+    }
+    .hero-select{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+    }
+    .search-fields button{
+        margin-top: 0;
+    }
+    .text-hero-section h1{
+        font-size: 2.78rem;
+    }
+}
+/* --------------------------------------------------- */
+
+/* the main */
+.main{
+    margin-bottom: 60px;
+}
+.main h2{
+    color: var(--black-color);
+    margin-bottom: var(--30);
+    margin-top: var(--30);
+}
+.main h2 span{
+    color: var(--blue-color);
+}
+
+
+/* section property type */
+
+/* the article- all the property types */
+.property-types{
+    max-width: 900px;
+    margin: auto;
+    padding: 10px;
+}
+.wrap-property{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 80px;
+    justify-content: center;
+    align-items: center;
+}
+/* for each article */
+.property-types article{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 140px;
+}
+.property-image{
+    width: 70px;
+    height: 70px;
+    padding: 12px;
+    background: linear-gradient(140.59deg, rgba(18, 82, 174, 0.3) 14.56%, rgba(18, 82, 174, 0) 86.74%);
+    border-radius: 50%;
+    box-shadow: 0px 6px 7px 0px rgba(18, 82, 174, 0.2) inset;
+}
+.property-image img{
+    width: 100%;  
+}
+.property-types h3{
+    color: var(--black-color);
+    font-size: var(--08rem);
+    margin-top: var(--10);
+    margin-bottom: 5px;
+}
+.property-types article span{
+    border-radius: var(--10);
+    background: rgba(235, 238, 242, 1);
+    box-shadow: 0px 2px 1px 0px rgba(36, 45, 60, 0.2);
+    padding: 2px 8px;
+    font-size: var(--07rem);
+}
+.end-of-section{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 50px;
+    gap: var(--10);
+}
+.end-of-section img{
+    width: 8px;
+}
+
+/* Mobile responsiveness */
+@media screen and (min-width: 500px){
+    .wrap-property{
+        justify-content: space-around;
+    }
+}
+@media screen and (min-width: 700px){
+    .wrap-property{
+        gap: 60px;
+    }
+}
+
+/* -------------------------------------------------------------------- */
+
+
+/* popular property deals section */
+
+.popular-property-deals{
+    max-width: 900px;
+    margin: auto;
+    padding: 10px;
+}
+.popular-property-deals .house-deal{
+    box-shadow: 0px 2px 3px 0px rgba(36, 45, 60, 0.2);
+    border-radius: var(--4);
+    max-width: 190px;
+    font-size: 0.6rem;
+}
+.card-image{
+    position: relative;
+}
+.card-image img{
+    max-width: 100%;
+    border-top-left-radius: var(--4);
+    border-top-right-radius: var(--4);
+}
+/* the "for sale" tag */
+.card-image span{
+    position: absolute;
+    background: var(--light-grey);
+    padding: 1px 8px;
+    font-size: var(--08rem);
+    border-radius: var(--2);
+    color: var(--black-color);
+    font-weight: 600;
+    box-shadow: 0px 2px 2px 0px rgba(42, 50, 60, 0.2);
+    margin: var(--10);
+    top: 0;
+    left: 0;
+}
+/* the information of the house */
+.house-deal .text-popular-property{
+    padding: var(--10);
+    display: flex;
+    flex-direction: column;
+    gap: var(--10);
+    /* font-size: 0.6rem; */
+}
+.text-popular-property h3{
+    font-size: 0.7rem;
+}
+/* the location information */
+.text-popular-property .house-location{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 7px;
+}
+/* to space between the bedroom and bathroom */
+.text-popular-property .bedrooms-and-bathroom{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+/* the bedroom information */
+.bedrooms-and-bathroom .bedrooms{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: var(--3);
+}
+/* the bathroom information */
+.bedrooms-and-bathroom .bathroom{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: var(--3);
+}
+/* the hr */
+.text-popular-property hr{
+    margin-bottom: var(--10);
+    color: var(--light-grey);
+}
+/* to space between the price and the view more link */
+.text-popular-property .price-and-more{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+/* the house price */
+.price-and-more .price{
+    color: var(--blue-color);
+    font-weight: 600;
+}
+.price span{
+    font-weight:100;
+}
+/* the view more link */
+.price-and-more a{
+    background-color: var(--light-grey);
+    text-decoration: none;
+    padding: 2px 6px;
+    border-radius: var(--4);
+    cursor: pointer;
+    color: var(--black-color);
+    font-weight: 600;
+    transition: color 0.3s;
+}
+.price-and-more a:hover{
+    background-color: var(--blue-color);
+    color: white;
+}
+
+/* the wrapper of all the cards */
+.popular-property-deals .warp-houses-cards{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+/* the footer view more button */
+.popular-property-deals .view-more-btn{
+    display: flex;
+    justify-content: center;
+    margin-top: 40px;
+}
+.view-more-popular-property{
+    display: inline-flex;
+    align-items: center;
+    padding: 4px 10px;
+    background-color: var(--blue-color);
+    color: white;
+    border-radius: 4px;
+    text-decoration: none;
+    box-shadow: 0px 3px 3px 0px rgba(9, 23, 44, 0.25);
+    transition: color 0.3s;
+}
+.view-more-popular-property:hover{
+    background-color: rgb(65, 136, 236);
+}
+/* the view more icon */
+.view-more-popular-property .arrow-right-thin {
+    margin-left: 2px;
+    margin-top: 5px;
+}
+
+
+/* -------------------------------------------------------------------------- */
+
+/* the about us section */
+
+/* the images */
+.about-us{
+    max-width: 900px;
+    margin: auto;
+    padding: 10px;
+}
+.best-agent-image, .best-real-image{
+    display: flex;
+    justify-content: center;
+    max-width: 100%;
+} 
+.best-real-image{
+    margin-top: 30px;
+}
+.about-us img{
+    width: 260px;
+    max-width: 100%;
+    box-shadow: 0px 15px 20px 0px rgba(7, 21, 42, 0.15);
+}
+.about-us .text{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    max-width: 400px;
+}
+.about-us .text h3{
+    color: var(--black-color);
+    max-width: 220px;
+    font-size: 1rem;
+    margin-top: 30px;
+}
+.about-us .text h3 span{
+    color: var(--blue-color);
+}
+.about-us .text p{
+    color: var(--grey-color);
+    font-size: 0.6rem;
+}
+.best-and-trusted-agent, .best-real-estate{
+    margin-bottom: 50px;
+}
+.best-real-estate ul{
+    font-size: 0.56rem;
+    list-style: none;
+    line-height: 25px;
+    font-weight: 600;
+}
+.best-real-estate ul li{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 5px;
+}
+.best-real-estate ul li img{
+    width: 10px;
+}
+.about-us .text a{
+    font-size: 0.65rem;
+}
+/* Mobile responsiveness */
+@media screen and (min-width: 321px){
+
+
+}
+@media screen and (min-width: 690px){
+    .best-and-trusted-agent, .best-real-estate{
+        display: flex;
+        justify-content: space-between;
+        gap: 50px;
+    }
+    .about-us .text h3{
+        margin-top: 0;
+        font-size: 1.7rem;
+        max-width: 380px;
+    }
+    .about-us img{
+        width: 350px;
+        max-width: 100%;
+        box-shadow: 0px 15px 20px 0px rgba(7, 21, 42, 0.15);
+    }
+}
+
+/* ------------------------------------------------------------------------ */
+
+
+/* the MILESTONES section */
+
+.milestones{
+    background: rgba(244, 246, 248, 1);
+    width: 100vw;
+    max-width: -webkit-fill-available;
+}
+.milestones .wrap-milestones{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 60px 20px;
+    max-width: 900px;
+    margin: auto;
+}
+.milestones .milestones-card{
+    background-color: white;
+    color: var(--black-color);
+    border-radius: 2px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+    padding: 10px;
+    width: 170px;
+    height: 110px;
+}
+.milestones-card img{
+    width: 25px;
+}
+.milestones-card h3{
+    font-size: 1.3rem;
+    font-weight: 700;
+}
+.milestones-card hr{
+    width: 20px;
+    color: rgba(115, 125, 140, 1);
+}
+.milestones-card span{
+    font-size: 0.8rem;
+    color: rgba(115, 125, 140, 1);
+}
+
+
+/* ---------------------------------------------------------- */
+
+
+
+
+/* the CLIENTS SAYS section */
+.responses{
+    max-width: 900px;
+    margin: auto;
+    padding: 10px;
+}
+.responses .wrap-responses {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+}
+.profile{
+    position: relative;
+    max-width: 250px;
+    box-shadow: 0px 2px 3px 0px rgba(36, 45, 60, 0.2);
+    border-radius: 4px;
+    font-size: 0.65rem;
+    color: var(--grey-color);
+    padding-top: 40px;
+    padding-bottom: 30px;
+    padding-right: 30px;
+    padding-left: 30px;
+    margin-top: 80px;
+}
+.opacity{
+    opacity: 0.5;
+}
+.profile .profile-image{
+    position: absolute;
+    top: -40px;
+    left: 15px;
+    border-radius: 50%;
+    box-shadow: 0px 15px 20px 0px rgba(7, 21, 42, 0.15);
+    width: 70px;
+}
+.profile .quote{
+    position: absolute;
+    right: 5px;
+    top: 0;
+}
+.profile hr{
+    margin: 10px;
+}
+.details-and-stars{
+    display: flex;
+    justify-content: space-between;
+}
+.details-and-stars .profile-details{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+.profile-details .name{
+    font-size: 0.7rem;
+    color: var(--black-color);
+}
+.details-and-stars .stars{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    width: 65px;
+}
+.stars img{
+    width: 10px;
+}
+@media screen and (min-width: 321x) {
+    .profile{
+        min-width: 250px;
+        max-width: 300px;
+    }
+}
+
+
+
+/* --------------------------------------------------------------------- */
+
+
+/* the FEATURED PROPERTIES section */
+.featured-properties{
+    background: rgba(244, 246, 248, 1);
+    width: 100vw;
+    max-width: -webkit-fill-available;
+    margin-top: 60px;
+    margin-bottom: 60px;
+    padding-bottom: 40px;
+    padding-top: 15px;
+}
+.wrap-to-margin{
+    max-width: 900px;
+    margin: auto;
+    padding: 10px;
+}
+.wrap-featured-houses{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+    gap: 10px;
+}
+.featured-houses{
+    max-width: 270px;
+    border-radius: var(--4);
+    font-size: 0.65rem;
+    box-shadow: 0px 2px 3px 0px rgba(36, 45, 60, 0.2);
+    padding: 15px;
+    margin-top: 30px;
+    background-color: white;
+}
+.featured-houses .image{
+    max-width: 100%;
+    border-top-left-radius: var(--4);
+    border-top-right-radius: var(--4);
+    box-shadow: 0px 5px 10px 0px rgba(7, 21, 42, 0.12);
+}
+.featured-houses-details{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10px;
+}
+.featured-houses-details .details{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 5px;
+}
+.details h3{
+    font-size: 0.75rem;
+}
+.details .house-location{
+    display: flex;
+    align-items: center;
+    gap: 2px;
+}
+.house-location img{
+    width: 10px;
+}
+.featured-houses-details .for-sale{
+    border-radius: 2px;
+    box-shadow: 0px 2px 2px 0px rgba(19, 105, 95, 0.2);
+    background: rgba(76, 182, 170, 0.15);
+    padding: 1px 5px;
+    color: rgba(76, 182, 170, 1);
+}
+.stars-and-price{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10px;
+}
+.stars-and-price .price{
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+.vectors button{
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+}
+.vectors img{
+    width: 20px;
+}
+
+
+
+/* ------------------------------------------------------------------------------- */
+
+
+
+.subscribe-section{
+    background: rgba(18, 82, 174, 0.2);
+    border-radius: 15px;
+    position: relative;
+    height: 200px;
+    max-width: 900px;
+    margin: auto;
+}
+.subscribe-content{
+    position: absolute;
+    z-index: 1;
+    padding: 20px 10px;
+    top: -15px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+.subscribe-content h2{
+    color: var(--blue-color);
+    margin-bottom: 15px;
+    max-width: 300px;
+    font-size: 1.4rem;
+}
+.subscribe-form{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+.input-group{
+    position: relative;
+    width: 100%;
+    max-width: 300px;
+}
+.input-group input[type="email"] {
+    width: 100%;
+    box-shadow: 0px 2px 1px 0px rgba(36, 45, 60, 0.2);
+    padding: 10px;
+    border-radius: 3px;
+    border: none;
+    font-size: 0.7rem;
+    outline:0px;
+}
+.input-group button {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    padding: 4px 8px;
+    background-color: var(--blue-color);
+    color: white;
+    border: none;
+    border-radius: 3px;
+    font-size: 0.7rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+.input-group button:hover {
+    background-color: rgb(65, 136, 236);
+}
+.subscribe-image img{
+    max-width: 300px;
+    position: absolute;
+    bottom: -10px;
+    right: 0;
+}
+
+
+/* ------------------------------------------------------------------- */
+
+/* the FOOTER */
+.footer{
+    background: rgba(244, 246, 248, 1);
+    width: 100vw;
+    max-width: -webkit-fill-available;
+    color: var(--grey-color);
+
+}
+.wrap-footer{
+    padding: 10px;
+    font-size: 0.7rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    gap: 20px;
+    max-width: 900px;
+    margin: auto;
+}
+.wrap-section{
+    max-width: 250px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+.footer h3{
+    font-size: 0.9rem;
+    color: black;
+}
+/* the homeey part */
+.homeey p{
+    color: rgba(115, 125, 140, 1);
+    margin-bottom: 5px;
+}
+.wrap-social{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 10px;
+}
+.social{
+    background: rgba(42, 50, 60, 0.1);
+    padding: 6px;
+    border-radius: 4px;
+    transition: color 0.3s;
+}
+.social:hover{
+    background-color: white;
+}
+/* the about us and support & summery parts */
+.wrap-option{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+    width: 100px;
+}
+.wrap-option a{
+    text-decoration: none;
+    color:var(--grey-color);
+    transition: color 0.3s;
+}
+.wrap-option a:hover {
+    color: var(--blue-color); 
+    padding-left: 15px;
+    background-image: url(./assets/icon/pointer.svg);
+    background-repeat: no-repeat;
+    background-position: 1px center;
+}
+/* the contact us part */
+.contact-us .contact{
+    display: flex;
+    justify-content: flex-start;
+    gap: 10px;
+    align-items: flex-start;
+}
+.contact .contact-image{
+    background: rgba(18, 82, 174, 0.12);
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.contact .text{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    max-width: 200px;
+}
+.text .header-contact{
+    font-size: 1rem;
+    color: black;
+}
+.text .details-contact a{
+    text-decoration: none;
+    color: var(--grey-color);
+    transition: color 0.3s;
+}
+.text .details-contact a:hover{
+    color: var(--blue-color);
+}
+/* Footer bottom section */
+.wrap-footer-bottom{
+    max-width: 900px;
+    margin: auto;
+    padding: 10px;
+}
+hr {
+    border: none;
+    height: 1px;
+    background: rgba(217, 217, 217, 1); 
+   /*  margin: 10px; */ 
+}
+.footer-bottom {
+    text-align: center;
+    font-size: 0.8rem;
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+.footer-bottom .heart {
+    color: red;
+}
+.footer-bottom a{
+    text-decoration: none;
+    color: var(--grey-color);
+}
+/* Media Query for Larger Screens */
+@media (min-width: 700px) {
+    .wrap-footer {
+        flex-direction: row; /* Horizontal layout on larger screens */
+        justify-content: space-between;
+        flex-wrap: wrap;
+        gap: 30px;
+        max-width: 900px;
+    }
+}
+@media (min-width: 457px) {
+    .footer-bottom {
+        justify-content: space-between;
+    }
+}
